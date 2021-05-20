@@ -14,7 +14,7 @@ public class Case1 {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(options);
         driver.get("http://google.com");
         driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
         driver.findElement(By.cssSelector ("div.XRsWPe.AOvabd")).sendKeys("7", Keys.ENTER);
