@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
+//Тест 1. Проверка операций с целыми числами.
 public class Case1 {
     @Test
     public void test1(){
@@ -14,6 +14,7 @@ public class Case1 {
         WebDriver driver = new ChromeDriver();
         driver.get("http://google.com");
         driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
-        driver.quit();
+        driver.findElement(By.cssSelector ("div.XRsWPe.AOvabd")).sendKeys("", Keys.NUMPAD5);
+        //driver.quit();
     }
 }
