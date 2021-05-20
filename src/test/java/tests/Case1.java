@@ -10,7 +10,7 @@ public class Case1 {
     public void test1(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("http//:google.com");
+        driver.get("http://google.com");
         driver.quit();
     }
 }
