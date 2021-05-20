@@ -22,8 +22,7 @@ public class Case1 {
     public void test1(){
         driver.get("http://google.com");
         driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
-        //driver.findElement(By.cssSelector ("div.XRsWPe.AOvabd")).click();
-        driver.findElement(By.cssSelector ("div.abcgof")) .sendKeys(Keys.ENTER);
-        //driver.quit();
+        driver.findElement(By.cssSelector ("div.XRsWPe.AOvabd")).click();
+        driver.quit();
     }
 }
