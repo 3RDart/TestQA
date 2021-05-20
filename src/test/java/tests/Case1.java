@@ -18,6 +18,6 @@ public class Case1 {
         driver.get("http://google.com");
         driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
         driver.findElement(By.cssSelector ("div.XRsWPe.AOvabd")).sendKeys("7", Keys.ENTER);
-        //driver.quit();
+        driver.quit();
     }
 }
