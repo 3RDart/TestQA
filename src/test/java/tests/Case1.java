@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -23,6 +24,9 @@ public class Case1 {
         driver.get("http://google.com");
         driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
         driver.findElement(By.cssSelector ("div.XRsWPe.AOvabd")).click();
-        driver.quit();
-    }
+           }
+@AfterAll
+public static void fulldown() {
+    driver.quit();
+}
 }
