@@ -13,7 +13,7 @@ public class Case1 {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://google.com");
-        driver.findElement(By.id("input")).sendKeys("калькулятор", Keys.ENTER);
+        driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
         driver.quit();
     }
 }
