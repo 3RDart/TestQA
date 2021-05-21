@@ -1,5 +1,6 @@
 package tests;
 
+import Options.Case1_options;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -13,12 +14,14 @@ import org.openqa.selenium.support.pagefactory.ByAll;
 //Тест 1. Проверка операций с целыми числами.
 public class Case1 {
     private static WebDriver driver;
+    private static Case1_options case1_options;
     @BeforeAll
     public static void init(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
+        case1_options = new Case1_options(driver);
     }
     @Test
     public void case1(){
@@ -37,6 +40,7 @@ public class Case1 {
         driver.findElement (By.xpath("//div[@jsname='WxTTNd']")). click();
         driver.findElement (By.xpath("//div[@jsname='Ax5wH']")). click();
         driver.findElement (By.xpath("//div[@jsname='Pt8tGc']")). click();
+
     }
 @AfterAll
 public static void fulldown() {
