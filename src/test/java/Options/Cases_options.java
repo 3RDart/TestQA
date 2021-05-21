@@ -49,6 +49,7 @@ public class Cases_options {
     @FindBy (xpath ="//div[@jsname='YovRWb']")
     public WebElement sym_x;
     @FindBy (xpath ="//div[@jsname='pPHzQc']")
+    //Знак минус
     public WebElement sym_min;
     @FindBy (xpath ="//div[@jsname='XSr6wc']")
     public WebElement sym_plus;
