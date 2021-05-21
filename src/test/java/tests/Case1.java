@@ -37,9 +37,8 @@ public class Case1 {
         driver.findElement (By.xpath("//div[@jsname='WxTTNd']")). click();
         driver.findElement (By.xpath("//div[@jsname='Ax5wH']")). click();
         driver.findElement (By.xpath("//div[@jsname='Pt8tGc']")). click();
-
     }
-//@AfterAll
+@AfterAll
 public static void fulldown() {
     driver.quit();
 }
