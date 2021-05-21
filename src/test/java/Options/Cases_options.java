@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 
-public class Case1_options {
+public class Cases_options {
     @FindBy (xpath ="//div[@jsname='N10B9']")
     public WebElement num_1;
     @FindBy (xpath ="//div[@jsname='lVjWed']")
@@ -56,7 +56,7 @@ public class Case1_options {
     public WebElement fun_sin;
 
 
-    public Case1_options(WebDriver driver) {
+    public Cases_options(WebDriver driver) {
         initElements(driver, this);
     }
 }

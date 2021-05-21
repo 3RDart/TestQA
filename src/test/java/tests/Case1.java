@@ -1,6 +1,6 @@
 package tests;
 
-import Options.Case1_options;
+import Options.Cases_options;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -9,19 +9,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.pagefactory.ByAll;
 
 //Тест 1. Проверка операций с целыми числами.
 public class Case1 {
     private static WebDriver driver;
-    private static Case1_options case1_options;
+    private static Cases_options cases_options;
     @BeforeAll
     public static void init(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
-        case1_options = new Case1_options(driver);
+        cases_options = new Cases_options(driver);
     }
     @Test
     public void case1(){
