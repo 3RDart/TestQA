@@ -1,7 +1,6 @@
 package tests;
 
 import Options.Cases_options;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
