@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.pagefactory.ByAll;
 
 //Тест 1. Проверка операций с целыми числами.
 public class Case1 {
@@ -20,12 +21,13 @@ public class Case1 {
         driver = new ChromeDriver(options);
     }
     @Test
-    public void test1(){
+    public void case1(){
         driver.get("http://google.com");
         driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
-        driver.findElement(By.cssSelector ("div.XRsWPe.AOvabd")).click();
-           }
-@AfterAll
+        //driver.findElements(By.cssSelector ("div.XRsWPe.AOvabd. 2")). click();
+        driver.findElement (By.xpath("//div[@jsname='xAP7E']")). click();
+    }
+//@AfterAll
 public static void fulldown() {
     driver.quit();
 }
