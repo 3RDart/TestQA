@@ -25,7 +25,7 @@ public class Cases {
     //Кейс1. Проверка операций с целыми числами.
     public void case1(){
         driver.get("http://google.com");
-        driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
+        cases_options.search("Калькулятор");
         cases_options.sym_9.click();
         cases_options.num_1.click();
         cases_options.sym_plus.click();
@@ -39,13 +39,12 @@ public class Cases {
         cases_options.sym_del.click();
         cases_options.num_5.click();
         cases_options.sym_eq.click();
-
     }
     @Test
     //Кейс 2. Проверка деления на ноль.
     public void case2(){
         driver.get("http://google.com");
-        driver.findElement(By.cssSelector ("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
+        cases_options.search("Калькулятор");
     cases_options.num_6.click();
     cases_options.sym_del.click();
     cases_options.num_0.click();
@@ -55,13 +54,12 @@ public class Cases {
     //Кейс 3. Проверка ошибки при отсутствии значения
     public void case3() {
         driver.get("http://google.com");
-        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
+        cases_options.search("Калькулятор");
         cases_options.fun_sin.click();
         cases_options.sym_eq.click();
     }
-
 //@AfterAll
 public static void fulldown() {
-    driver.quit();
+            driver.quit();
 }
 }

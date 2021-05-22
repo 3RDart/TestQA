@@ -1,5 +1,6 @@
 package Options;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,10 @@ import org.openqa.selenium.support.FindBy;
 import static org.openqa.selenium.support.PageFactory.initElements;
 
 public class Cases_options {
+    //Строка поиска
+    @FindBy(css = "input.gLFyf.gsfi")
+    public WebElement searchInput;
+    //Далее идут элементы ввода и управления кальклятором
     @FindBy (xpath ="//div[@jsname='N10B9']")
     public WebElement num_1;
     @FindBy (xpath ="//div[@jsname='lVjWed']")
@@ -56,8 +61,11 @@ public class Cases_options {
     @FindBy (xpath ="//div[@jsname='aN1RFf']")
     public WebElement fun_sin;
 
-
     public Cases_options(WebDriver driver) {
         initElements(driver, this);
+    }
+    //ВВод и поиск укороченный вариант
+    public void search (String text){
+        searchInput.sendKeys(text, Keys.ENTER);
     }
 }
