@@ -62,7 +62,7 @@ public class Cases_options {
     public WebElement fun_sin;
     //Данные в ответе
     @FindBy (css ="span#cwos.qv3Wpe")
-    public WebElement Answer;
+    public WebElement check_Answer;
 
     public Cases_options(WebDriver driver) {
         initElements(driver, this);
