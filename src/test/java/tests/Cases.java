@@ -42,7 +42,7 @@ public class Cases {
         //Проверки результатов теста
         assertEquals("(1 + 2) × 3 - 40 ÷ 5 =",cases_options.check_Form.getText());
         assertEquals("1",cases_options.check_Answer.getText());
-       // Пауза чтобы визуально посмотреть результат
+        // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e){
@@ -53,13 +53,13 @@ public class Cases {
     public void case2(){
         driver.get("http://google.com");
         cases_options.search("Калькулятор");
-    cases_options.num_6.click();
-    cases_options.sym_del.click();
-    cases_options.num_0.click();
-    cases_options.sym_eq.click();
-    //Проверки результатов теста
-    assertEquals("6 ÷ 0 =",cases_options.check_Form.getText());
-    assertEquals("Infinity",cases_options.check_Answer.getText());
+        cases_options.num_6.click();
+        cases_options.sym_del.click();
+        cases_options.num_0.click();
+        cases_options.sym_eq.click();
+        //Проверки результатов теста
+        assertEquals("6 ÷ 0 =",cases_options.check_Form.getText());
+        assertEquals("Infinity",cases_options.check_Answer.getText());
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
@@ -79,7 +79,8 @@ public class Cases {
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e){
+        }
+        catch (InterruptedException e){
         }
     }
 @AfterAll
