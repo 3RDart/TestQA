@@ -1,10 +1,7 @@
 package tests;
 
 import Options.Cases_options;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -30,7 +27,7 @@ public class Cases {
           driver.get("http://google.com");
     }
     @Test
-    //Кейс1. Проверка операций с целыми числами.
+    @DisplayName("Кейс1. Проверка операций с целыми числами")
     public void case1() {
         cases_options.search("Калькулятор");
         cases_options.sym_9.click();
@@ -59,7 +56,7 @@ public class Cases {
     }
 
     @Test
-    //Кейс 2. Проверка деления на ноль.
+    @DisplayName("Кейс 2. Проверка деления на ноль")
     public void case2() {
         cases_options.search("Калькулятор");
         cases_options.num_6.click();
@@ -79,7 +76,7 @@ public class Cases {
     }
 
     @Test
-    //Кейс 3. Проверка ошибки при отсутствии значения
+    @DisplayName("Кейс 3. Проверка ошибки при отсутствии значения")
     public void case3() {
         cases_options.search("Калькулятор");
         cases_options.fun_sin.click();
