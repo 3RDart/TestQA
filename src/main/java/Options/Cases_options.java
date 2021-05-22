@@ -60,6 +60,9 @@ public class Cases_options {
     public WebElement sym_plus;
     @FindBy (xpath ="//div[@jsname='aN1RFf']")
     public WebElement fun_sin;
+    //Данные в ответе
+    @FindBy (css ="span#cwos.qv3Wpe")
+    public WebElement Answer;
 
     public Cases_options(WebDriver driver) {
         initElements(driver, this);
