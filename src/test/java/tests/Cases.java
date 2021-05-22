@@ -13,17 +13,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Cases {
     private static WebDriver driver;
     private static Cases_options cases_options;
+
     @BeforeAll
-    public static void init(){
+    public static void init() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         cases_options = new Cases_options(driver);
     }
+
     @Test
     //Кейс1. Проверка операций с целыми числами.
-    public void case1(){
+    public void case1() {
         driver.get("http://google.com");
         cases_options.search("Калькулятор");
         cases_options.sym_9.click();
@@ -40,17 +42,18 @@ public class Cases {
         cases_options.num_5.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
-        assertEquals("(1 + 2) × 3 - 40 ÷ 5 =",cases_options.check_Form.getText());
-        assertEquals("1",cases_options.check_Answer.getText());
+        assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", cases_options.check_Form.getText());
+        assertEquals("1", cases_options.check_Answer.getText());
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
         }
     }
+
     @Test
     //Кейс 2. Проверка деления на ноль.
-    public void case2(){
+    public void case2() {
         driver.get("http://google.com");
         cases_options.search("Калькулятор");
         cases_options.num_6.click();
@@ -58,14 +61,15 @@ public class Cases {
         cases_options.num_0.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
-        assertEquals("6 ÷ 0 =",cases_options.check_Form.getText());
-        assertEquals("Infinity",cases_options.check_Answer.getText());
+        assertEquals("6 ÷ 0 =", cases_options.check_Form.getText());
+        assertEquals("Infinity", cases_options.check_Answer.getText());
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
         }
     }
+
     @Test
     //Кейс 3. Проверка ошибки при отсутствии значения
     public void case3() {
@@ -74,17 +78,17 @@ public class Cases {
         cases_options.fun_sin.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
-        assertEquals("sin() =",cases_options.check_Form.getText());
-        assertEquals("Error",cases_options.check_Answer.getText());
+        assertEquals("sin() =", cases_options.check_Form.getText());
+        assertEquals("Error", cases_options.check_Answer.getText());
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
-        }
-        catch (InterruptedException e){
+        } catch (InterruptedException e) {
         }
     }
-@AfterAll
-public static void fulldown() {
-            driver.quit();
-}
+
+    @AfterAll
+    public static void fulldown() {
+        driver.quit();
+    }
 }
