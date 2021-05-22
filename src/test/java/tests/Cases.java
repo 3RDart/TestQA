@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Cases {
@@ -42,8 +44,10 @@ public class Cases {
         cases_options.num_5.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
-        assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", cases_options.check_Form.getText());
-        assertEquals("1", cases_options.check_Answer.getText());
+        assertAll(
+                ()-> assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", cases_options.check_Form.getText()),
+                ()-> assertEquals("1", cases_options.check_Answer.getText())
+        );
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
@@ -61,8 +65,10 @@ public class Cases {
         cases_options.num_0.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
-        assertEquals("6 ÷ 0 =", cases_options.check_Form.getText());
-        assertEquals("Infinity", cases_options.check_Answer.getText());
+        assertAll(
+                ()-> assertEquals("6 ÷ 0 =", cases_options.check_Form.getText()),
+                ()-> assertEquals("Infinity", cases_options.check_Answer.getText())
+        );
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
@@ -78,8 +84,10 @@ public class Cases {
         cases_options.fun_sin.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
-        assertEquals("sin() =", cases_options.check_Form.getText());
-        assertEquals("Error", cases_options.check_Answer.getText());
+        assertAll(
+                ()->assertEquals("sin() =", cases_options.check_Form.getText()),
+                ()->assertEquals("Error", cases_options.check_Answer.getText())
+        );
         // Пауза чтобы визуально посмотреть результат
         try {
             TimeUnit.SECONDS.sleep(3);
