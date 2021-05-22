@@ -60,7 +60,9 @@ public class Cases_options {
     public WebElement sym_plus;
     @FindBy (xpath ="//div[@jsname='aN1RFf']")
     public WebElement fun_sin;
-    //Данные в ответе
+    //Данные в ответах
+    @FindBy (css ="span.vUGUtc")
+    public WebElement check_Form;
     @FindBy (css ="span#cwos.qv3Wpe")
     public WebElement check_Answer;
 

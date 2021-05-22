@@ -40,10 +40,11 @@ public class Cases {
         cases_options.num_5.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
+        assertEquals("(1 + 2) × 3 - 40 ÷ 5 =",cases_options.check_Form.getText());
         assertEquals("1",cases_options.check_Answer.getText());
        // Пауза чтобы визуально посмотреть результат
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e){
         }
     }
@@ -57,10 +58,11 @@ public class Cases {
     cases_options.num_0.click();
     cases_options.sym_eq.click();
     //Проверки результатов теста
+    assertEquals("6 ÷ 0 =",cases_options.check_Form.getText());
     assertEquals("Infinity",cases_options.check_Answer.getText());
         // Пауза чтобы визуально посмотреть результат
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e){
         }
     }
@@ -72,10 +74,11 @@ public class Cases {
         cases_options.fun_sin.click();
         cases_options.sym_eq.click();
         //Проверки результатов теста
+        assertEquals("sin() =",cases_options.check_Form.getText());
         assertEquals("Error",cases_options.check_Answer.getText());
         // Пауза чтобы визуально посмотреть результат
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e){
         }
     }
