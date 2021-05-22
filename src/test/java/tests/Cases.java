@@ -1,18 +1,13 @@
 package tests;
 
 import Options.Cases_options;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.FindBy;
-
-import javax.swing.*;
-
+import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Cases {
@@ -44,7 +39,13 @@ public class Cases {
         cases_options.sym_del.click();
         cases_options.num_5.click();
         cases_options.sym_eq.click();
+        //Проверки результатов теста
         assertEquals("1",cases_options.check_Answer.getText());
+       // Пауза чтобы визуально посмотреть результат
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e){
+        }
     }
     @Test
     //Кейс 2. Проверка деления на ноль.
@@ -55,7 +56,13 @@ public class Cases {
     cases_options.sym_del.click();
     cases_options.num_0.click();
     cases_options.sym_eq.click();
+    //Проверки результатов теста
     assertEquals("Infinity",cases_options.check_Answer.getText());
+        // Пауза чтобы визуально посмотреть результат
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e){
+        }
     }
     @Test
     //Кейс 3. Проверка ошибки при отсутствии значения
@@ -64,9 +71,15 @@ public class Cases {
         cases_options.search("Калькулятор");
         cases_options.fun_sin.click();
         cases_options.sym_eq.click();
+        //Проверки результатов теста
         assertEquals("Error",cases_options.check_Answer.getText());
+        // Пауза чтобы визуально посмотреть результат
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e){
+        }
     }
-//@AfterAll
+@AfterAll
 public static void fulldown() {
             driver.quit();
 }
